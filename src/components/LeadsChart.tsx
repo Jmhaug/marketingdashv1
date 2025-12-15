@@ -1,16 +1,7 @@
 "use client";
 
 import { Calendar, TrendingUp, TrendingDown } from "lucide-react";
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-  Legend,
-} from "recharts";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 
 const data = [
   { month: "Jan", newLeads: 320, replied: 240 },
@@ -39,25 +30,25 @@ const CustomTooltip = ({ active, payload, label }: CustomTooltipProps) => {
     const percentChange = newLeads && replied ? ((replied.value / newLeads.value) * 100).toFixed(0) : 0;
 
     return (
-      <div className="bg-white border border-gray-200 rounded-lg shadow-lg p-3 min-w-[160px]">
-        <p className="font-medium text-sm mb-2">{label}, 2025</p>
+      <div className="bg-[#fffdf9] border border-[#f1d6c2] rounded-2xl shadow-lg p-4 min-w-[180px]">
+        <p className="font-medium text-sm mb-2 text-[#1f2533]">{label}, 2025</p>
         <div className="space-y-1.5">
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-emerald-500" />
-              <span className="text-gray-600">{newLeads?.value}</span>
+              <div className="w-2 h-2 rounded-full bg-[#ee6c4d]" />
+              <span className="text-[#5f5b53]">{newLeads?.value}</span>
             </div>
-            <div className="flex items-center gap-1 text-emerald-600">
+            <div className="flex items-center gap-1 text-[#1f7a5f]">
               <TrendingUp size={12} />
               <span>{percentChange}%</span>
             </div>
           </div>
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-gray-900" />
-              <span className="text-gray-600">{replied?.value}</span>
+              <div className="w-2 h-2 rounded-full bg-[#1f2533]" />
+              <span className="text-[#5f5b53]">{replied?.value}</span>
             </div>
-            <div className="flex items-center gap-1 text-gray-500">
+            <div className="flex items-center gap-1 text-[#a98879]">
               <TrendingDown size={12} />
               <span>{diff}</span>
             </div>
@@ -71,24 +62,24 @@ const CustomTooltip = ({ active, payload, label }: CustomTooltipProps) => {
 
 export default function LeadsChart() {
   return (
-    <div className="bg-white rounded-xl p-5 border border-gray-100">
+    <div className="bg-white rounded-2xl p-5 border border-[#efe1d4]">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-2">
-          <div className="w-1 h-5 bg-emerald-500 rounded-full" />
-          <h3 className="font-semibold">Leads Over Time</h3>
+          <div className="w-1 h-5 bg-[#ee6c4d] rounded-full" />
+          <h3 className="font-semibold text-[#1f2533]">Leads Over Time</h3>
         </div>
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-4 text-sm">
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-emerald-500" />
-              <span className="text-gray-600">New Leads</span>
+              <div className="w-2 h-2 rounded-full bg-[#ee6c4d]" />
+              <span className="text-[#5f5b53]">New Leads</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-gray-900" />
-              <span className="text-gray-600">Replied</span>
+              <div className="w-2 h-2 rounded-full bg-[#1f2533]" />
+              <span className="text-[#5f5b53]">Replied</span>
             </div>
           </div>
-          <button className="flex items-center gap-2 px-3 py-1.5 border border-gray-200 rounded-lg text-sm hover:bg-gray-50">
+          <button className="flex items-center gap-2 px-3 py-1.5 border border-[#e7ded2] rounded-full text-sm text-[#1f2533]">
             <Calendar size={14} />
             <span>Jan - Jun</span>
           </button>
@@ -98,31 +89,31 @@ export default function LeadsChart() {
       <div className="h-[280px]">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={data} barGap={4}>
-            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f3f4f6" />
+            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f5eadc" />
             <XAxis
               dataKey="month"
               axisLine={false}
               tickLine={false}
-              tick={{ fill: "#9ca3af", fontSize: 12 }}
+              tick={{ fill: "#a98879", fontSize: 12 }}
               dy={10}
             />
             <YAxis
               axisLine={false}
               tickLine={false}
-              tick={{ fill: "#9ca3af", fontSize: 12 }}
+              tick={{ fill: "#a98879", fontSize: 12 }}
               dx={-10}
               tickFormatter={(value) => (value >= 1000 ? `${value / 1000}k` : value)}
             />
-            <Tooltip content={<CustomTooltip />} cursor={{ fill: "#f9fafb" }} />
+            <Tooltip content={<CustomTooltip />} cursor={{ fill: "#fffaf5" }} />
             <Bar
               dataKey="newLeads"
-              fill="#10b981"
+              fill="#ee6c4d"
               radius={[4, 4, 0, 0]}
               maxBarSize={32}
             />
             <Bar
               dataKey="replied"
-              fill="#111827"
+              fill="#1f2533"
               radius={[4, 4, 0, 0]}
               maxBarSize={32}
             />

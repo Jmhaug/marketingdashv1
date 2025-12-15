@@ -39,16 +39,24 @@ export default function StatsCards() {
       {stats.map((stat) => (
         <div
           key={stat.label}
-          className="bg-white rounded-xl p-5 border border-gray-100"
+          className="bg-white rounded-2xl p-5 border border-[#efe1d4] relative overflow-hidden"
         >
+          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-[#f8d7c1] to-transparent" />
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-sm text-gray-500 mb-1">{stat.label}</p>
-              <p className="text-2xl font-semibold">{stat.value}</p>
+              <p className="text-sm text-[#5f5b53] mb-1">{stat.label}</p>
+              <p className="text-2xl font-semibold text-[#1f2533]">{stat.value}</p>
             </div>
-            <div className="p-2.5 bg-gray-50 rounded-lg">
-              <stat.icon className="w-5 h-5 text-gray-600" />
+            <div className="p-2.5 rounded-xl bg-[#fff1ea] text-[#d47a5a]">
+              <stat.icon className="w-5 h-5" />
             </div>
+          </div>
+          <div
+            className={`mt-3 text-sm font-medium ${
+              stat.changeType === "positive" ? "text-[#1f7a5f]" : "text-[#b45309]"
+            }`}
+          >
+            {stat.changeType === "positive" ? "▲" : "▼"} {stat.change}
           </div>
         </div>
       ))}

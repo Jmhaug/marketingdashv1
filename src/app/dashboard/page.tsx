@@ -12,26 +12,26 @@ export default function DashboardPage() {
       {/* Header */}
       <div className="flex items-center justify-between mb-8">
         <div>
-          <div className="flex items-center gap-2 text-sm text-gray-500 mb-1">
-            <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+          <div className="flex items-center gap-2 text-sm text-[#a98879] mb-1">
+            <span className="w-2 h-2 bg-[#1f7a5f] rounded-full animate-pulse" />
             <span>3 team members are active</span>
             <div className="flex -space-x-2 ml-2">
-              <div className="w-6 h-6 bg-gray-200 rounded-full border-2 border-white flex items-center justify-center text-xs">J</div>
-              <div className="w-6 h-6 bg-gray-300 rounded-full border-2 border-white flex items-center justify-center text-xs">S</div>
-              <div className="w-6 h-6 bg-gray-400 rounded-full border-2 border-white flex items-center justify-center text-xs">M</div>
+              <div className="w-6 h-6 bg-[#f4ede4] rounded-full border-2 border-white flex items-center justify-center text-xs text-[#1f2533]">J</div>
+              <div className="w-6 h-6 bg-[#f1e3d6] rounded-full border-2 border-white flex items-center justify-center text-xs text-[#1f2533]">S</div>
+              <div className="w-6 h-6 bg-[#e5d5c4] rounded-full border-2 border-white flex items-center justify-center text-xs text-[#1f2533]">M</div>
             </div>
           </div>
-          <h1 className="text-2xl font-semibold flex items-center gap-2">
+          <h1 className="text-2xl font-semibold text-[#1f2533] flex items-center gap-2">
             Welcome back, Augustas
             <span className="text-2xl">👋</span>
           </h1>
         </div>
         <div className="flex items-center gap-3">
-          <button className="flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-lg text-sm hover:bg-gray-50">
+          <button className="flex items-center gap-2 px-4 py-2 border border-[#e7ded2] rounded-full text-sm text-[#1f2533]">
             <Download size={16} />
             <span>Export</span>
           </button>
-          <button className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-gray-800">
+          <button className="flex items-center gap-2 px-4 py-2 bg-[#1f2533] text-white rounded-full text-sm">
             <Plus size={16} />
             <span>New</span>
           </button>

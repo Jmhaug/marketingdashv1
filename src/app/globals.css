@@ -1,28 +1,73 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --mint: #10b981;
-  --mint-light: #d1fae5;
-  --gray-50: #f9fafb;
-  --gray-100: #f3f4f6;
-  --gray-200: #e5e7eb;
-  --gray-300: #d1d5db;
-  --gray-400: #9ca3af;
-  --gray-500: #6b7280;
-  --gray-600: #4b5563;
-  --gray-700: #374151;
-  --gray-800: #1f2937;
-  --gray-900: #111827;
+  --background: #f8f4ef;
+  --foreground: #1f2533;
+  --card: #ffffff;
+  --card-foreground: #1f2533;
+  --muted: #f1e9df;
+  --muted-foreground: #5f5b53;
+  --border: #e7ded2;
+  --input: #e7ded2;
+  --primary: #1f2533;
+  --primary-foreground: #fefdfb;
+  --secondary: #f4ede4;
+  --secondary-foreground: #1f2533;
+  --accent: #ee6c4d;
+  --accent-foreground: #fff9f6;
+  --destructive: #d92d20;
+  --destructive-foreground: #ffffff;
+  --ring: #ee6c4d;
+  --sidebar: #fdf8f1;
+  --sidebar-foreground: #4f4a44;
+  --sidebar-border: #efe4d6;
+}
+
+.dark {
+  --background: #0f1218;
+  --foreground: #f6f1ea;
+  --card: #161b24;
+  --card-foreground: #f6f1ea;
+  --muted: #1e2532;
+  --muted-foreground: #a4aebd;
+  --border: #262d3b;
+  --input: #262d3b;
+  --primary: #f6f1ea;
+  --primary-foreground: #0f1218;
+  --secondary: #1b212d;
+  --secondary-foreground: #f6f1ea;
+  --accent: #ff8d6c;
+  --accent-foreground: #0f1218;
+  --destructive: #f97066;
+  --destructive-foreground: #0f1218;
+  --ring: #ff8d6c;
+  --sidebar: #10131b;
+  --sidebar-foreground: #cdd2db;
+  --sidebar-border: #1c2230;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-mint: var(--mint);
-  --color-mint-light: var(--mint-light);
-  --font-sans: var(--font-geist-sans);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -43,12 +88,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d1d5db;
+  background: var(--border);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #9ca3af;
+  background: var(--muted-foreground);
 }
 
 /* Smooth transitions */
@@ -56,4 +101,13 @@ body {
   transition-property: background-color, border-color, color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+/* Chart colors for dark mode */
+.dark .recharts-cartesian-grid line {
+  stroke: #27272a;
+}
+
+.dark .recharts-text {
+  fill: #a1a1aa;
 }

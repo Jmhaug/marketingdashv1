@@ -1,7 +1,6 @@
 "use client";
 
-import { Search, FileText, Clock } from "lucide-react";
-import Image from "next/image";
+import { Search, Clock } from "lucide-react";
 
 const documents = [
   {
@@ -52,15 +51,15 @@ const documents = [
 
 export default function RecentDocuments() {
   return (
-    <div className="bg-white rounded-xl p-5 border border-gray-100 h-full">
+    <div className="bg-white rounded-2xl p-5 border border-[#efe1d4] h-full">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="font-semibold">Recent Documents</h3>
+        <h3 className="font-semibold text-[#1f2533]">Recent Documents</h3>
         <div className="relative">
-          <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 text-gray-400" size={14} />
+          <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[#c5a99d]" size={14} />
           <input
             type="text"
             placeholder="Search files..."
-            className="pl-8 pr-3 py-1.5 bg-gray-50 border border-gray-100 rounded-lg text-sm w-32 focus:outline-none focus:border-gray-300 focus:w-40 transition-all"
+            className="pl-8 pr-3 py-1.5 bg-[#f8f4ef] border border-[#e7ded2] rounded-full text-sm w-32 focus:outline-none focus:border-[#d8c7b5] focus:w-40 transition-all"
           />
         </div>
       </div>
@@ -69,19 +68,19 @@ export default function RecentDocuments() {
         {documents.map((doc) => (
           <div
             key={doc.id}
-            className="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg cursor-pointer group"
+            className="flex items-center justify-between p-3 hover:bg-[#fff6ef] rounded-2xl cursor-pointer"
           >
             <div className="flex items-center gap-3">
-              <div className={`w-9 h-9 ${doc.iconBg} rounded-lg flex items-center justify-center text-lg`}>
+              <div className={`w-9 h-9 ${doc.iconBg} rounded-2xl flex items-center justify-center text-lg`}>
                 {doc.icon}
               </div>
-              <span className="text-sm font-medium">{doc.title}</span>
+              <span className="text-sm font-medium text-[#1f2533]">{doc.title}</span>
             </div>
             <div className="flex items-center gap-3">
-              <div className="w-7 h-7 bg-gray-200 rounded-full flex items-center justify-center text-xs font-medium">
+              <div className="w-7 h-7 bg-[#f4ede4] rounded-full flex items-center justify-center text-xs font-medium text-[#5f5b53]">
                 {doc.author.name.charAt(0)}
               </div>
-              <div className="flex items-center gap-1 text-xs text-gray-400">
+              <div className="flex items-center gap-1 text-xs text-[#a98879]">
                 <Clock size={12} />
                 <span>{doc.timestamp}</span>
               </div>
