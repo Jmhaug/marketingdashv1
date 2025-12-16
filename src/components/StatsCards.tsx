@@ -39,21 +39,21 @@ export default function StatsCards() {
       {stats.map((stat) => (
         <div
           key={stat.label}
-          className="bg-white rounded-2xl p-5 border border-[#efe1d4] relative overflow-hidden"
+          className="bg-card rounded-2xl p-5 border border-border relative overflow-hidden"
         >
-          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-[#f8d7c1] to-transparent" />
+          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-sm text-[#5f5b53] mb-1">{stat.label}</p>
-              <p className="text-2xl font-semibold text-[#1f2533]">{stat.value}</p>
+              <p className="text-sm text-muted-foreground mb-1">{stat.label}</p>
+              <p className="text-2xl font-semibold text-foreground">{stat.value}</p>
             </div>
-            <div className="p-2.5 rounded-xl bg-[#fff1ea] text-[#d47a5a]">
+            <div className="p-2.5 rounded-xl bg-accent/10 text-accent">
               <stat.icon className="w-5 h-5" />
             </div>
           </div>
           <div
             className={`mt-3 text-sm font-medium ${
-              stat.changeType === "positive" ? "text-[#1f7a5f]" : "text-[#b45309]"
+              stat.changeType === "positive" ? "text-emerald-600 dark:text-emerald-400" : "text-amber-600 dark:text-amber-400"
             }`}
           >
             {stat.changeType === "positive" ? "▲" : "▼"} {stat.change}
