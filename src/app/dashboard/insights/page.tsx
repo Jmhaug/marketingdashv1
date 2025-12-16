@@ -68,9 +68,9 @@ const assistantReplies = [
 ];
 
 const toneStyles: Record<InsightCard["tone"], { bg: string; icon: string; border: string }> = {
-  win: { bg: "bg-emerald-50 dark:bg-emerald-900/20", icon: "text-emerald-500", border: "border-emerald-200 dark:border-emerald-800" },
-  watch: { bg: "bg-amber-50 dark:bg-amber-900/20", icon: "text-amber-500", border: "border-amber-200 dark:border-amber-800" },
-  alert: { bg: "bg-red-50 dark:bg-red-900/20", icon: "text-red-500", border: "border-red-200 dark:border-red-800" },
+  win: { bg: "bg-emerald-50 dark:bg-emerald-950/50", icon: "text-emerald-600 dark:text-emerald-400", border: "border-emerald-200 dark:border-emerald-800/50" },
+  watch: { bg: "bg-amber-50 dark:bg-amber-950/50", icon: "text-amber-600 dark:text-amber-400", border: "border-amber-200 dark:border-amber-800/50" },
+  alert: { bg: "bg-red-50 dark:bg-red-950/50", icon: "text-red-600 dark:text-red-400", border: "border-red-200 dark:border-red-800/50" },
 };
 
 const makeId = () => Math.random().toString(36).slice(2, 9);
